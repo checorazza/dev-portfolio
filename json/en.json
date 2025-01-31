@@ -1,0 +1,18 @@
+{
+  "heroSubtitle": "Data Analyst",
+  "languageDropdown": "English",
+  "aboutText": "placeholder",
+  "servicesTitle": "Services",
+  "services": ["Data Cleaning", "placeholder", "placeholder"],
+  "services_description": [
+    "Preparing raw data for analysis by identifying and correcting errors, inconsistencies, and inaccuracies. Once this process is done, the data is accurate, complete, and reliable, ready for further analysis.",
+
+    "Creation of clear and visual representations of your data. Through charts, graphs, and maps, I help you identify patterns, trends, and outliers, making complex data more accessible and actionable for your needs.",
+
+    "placeholder"
+  ],
+  "experienceTitle": "Experience",
+  "projectsTitle": "Projects",
+  "skillsTitle": "Skills",
+  "contactTitle": "Contact Me"
+}
