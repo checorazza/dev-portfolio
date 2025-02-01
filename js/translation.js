@@ -79,6 +79,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Skills
     updateText("skillsTitle", langData.skillsTitle);
+    updateText("skills_subtitle1", langData.skillsSubtitle[0]);
+    updateText("skills_subtitle2", langData.skillsSubtitle[1]);
+    updateText("skills_subtitle3", langData.skillsSubtitle[2]);
   }
 
   // Event Listeners for Language Dropdown

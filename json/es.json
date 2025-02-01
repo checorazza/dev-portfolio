@@ -1,11 +1,28 @@
 {
-  "heroSubtitle": "Analista de Datos",
+  "heroSubtitle": "Analista de Data",
   "languageDropdown": "Español",
   "aboutText": "placeholder",
+  "detail_item": ["Argentina", "Ingeniería en Sistemas"],
   "servicesTitle": "Servicios",
-  "services": ["Limpieza de Datos", "placeholder", "placeholder"],
-  "experienceTitle": "Experiencia",
+  "services": {
+    "titles": [
+      "Limpieza de datos",
+      "Visualización de datos",
+      "Análisis de datos"
+    ],
+    "descriptions": ["Placeholder", "Placeholder", "placeholder"]
+  },
+  "experienceTitle": "Experience",
+  "experience": {
+    "titles": ["Experience 1", "Experience 2", "Experience 3"],
+    "descriptions": ["placeholder", "placeholder", "placeholder"]
+  },
   "projectsTitle": "Proyectos",
+  "projects": {
+    "titles": ["Project 1", "Project 2", "Project 3"],
+    "descriptions": ["placeholder", "placeholder", "placeholder"]
+  },
   "skillsTitle": "Habilidades",
-  "contactTitle": "Contacto"
+  "skillsSubtitle": ["Stack", "Bases de datos", "Herramientas"],
+  "contactTitle": "Contact Me"
 }

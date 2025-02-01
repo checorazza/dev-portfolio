@@ -19,10 +19,12 @@
     "titles": ["Experience 1", "Experience 2", "Experience 3"],
     "descriptions": ["placeholder", "placeholder", "placeholder"]
   },
+  "projectsTitle": "Projects",
   "projects": {
     "titles": ["Project 1", "Project 2", "Project 3"],
     "descriptions": ["placeholder", "placeholder", "placeholder"]
   },
   "skillsTitle": "Skills",
+  "skillsSubtitle": ["Stack", "Databases", "Tools"],
   "contactTitle": "Contact Me"
 }
