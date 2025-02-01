@@ -2,6 +2,7 @@
   "heroSubtitle": "Data Analyst",
   "languageDropdown": "English",
   "aboutText": "placeholder",
+  "detail_item": ["Argentina", "MS in Systems Engineering"],
   "servicesTitle": "Services",
   "services": ["Data Cleaning", "placeholder", "placeholder"],
   "services_description": [
@@ -13,6 +14,11 @@
   ],
   "experienceTitle": "Experience",
   "projectsTitle": "Projects",
+  "projects_description": ["placeholder", "placeholder", "placeholder"],
+  "projects": {
+    "titles": ["Project 1", "Project 2"],
+    "descriptions": ["placeholder", "placeholder"]
+  },
   "skillsTitle": "Skills",
   "contactTitle": "Contact Me"
 }

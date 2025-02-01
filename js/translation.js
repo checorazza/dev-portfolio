@@ -26,19 +26,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Update text elements with translation data
+    // Hero and navbar
     document.getElementById("heroSubtitle").textContent = langData.heroSubtitle;
     document.getElementById("languageDropdown").textContent =
       langData.languageDropdown;
+
+    // About Me
     document.getElementById("aboutText").textContent = langData.aboutText;
+
+    document.getElementById("detail_item1").textContent =
+      langData.detail_item[0];
+    document.getElementById("detail_item2").textContent =
+      langData.detail_item[1];
+
+    // Services
     document.getElementById("servicesTitle").textContent =
       langData.servicesTitle;
 
-    // Services
     document.getElementById("service1").textContent = langData.services[0];
     document.getElementById("service2").textContent = langData.services[1];
     document.getElementById("service3").textContent = langData.services[2];
 
-    // Services description
+    // -- Services description
     document.getElementById("service1_description").textContent =
       langData.services_description[0];
     document.getElementById("service2_description").textContent =
@@ -51,6 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Projects
     document.getElementById("projectsTitle").textContent =
       langData.projectsTitle;
+
+    document.getElementById("project_title1").textContent =
+      langData.projects.titles[0];
 
     // Skills
     document.getElementById("skillsTitle").textContent = langData.skillsTitle;
