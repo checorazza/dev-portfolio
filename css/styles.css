@@ -43,6 +43,18 @@ body {
   border-radius: 8px;
   padding: 10px 15px;
   font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-item span {
+  display: flex;
+  align-items: center;
+}
+
+.detail-item p {
+  margin: 0;
 }
 
 /*Custom card animation for small bootstrap cards*/
