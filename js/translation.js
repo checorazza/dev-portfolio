@@ -1,14 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const languageDropdown = document.getElementById("languageDropdown");
   const languageItems = document.querySelectorAll(
     ".dropdown-menu .dropdown-item"
   );
 
-  // Load specific translation file based on the selected language
   async function loadTranslations(language) {
     try {
-      const response = await fetch(`../json/${language}.json`); // Dynamically load the appropriate file
-      if (!response.ok) throw new Error("Network response was not ok");
+      const response = await fetch(`./json/${language}.json`);
+      if (!response.ok) throw new Error(`Failed to load ${language}.json`);
       return await response.json();
     } catch (error) {
       console.error(`Error loading translations for ${language}:`, error);
@@ -16,72 +15,85 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Update page content with selected language
   async function updateContent(language) {
-    const langData = await loadTranslations(language);
+    console.log("Updating content for:", language); // Debugging
 
+    const langData = await loadTranslations(language);
     if (!langData) {
-      console.warn(`Translations not found for language: ${language}`);
+      console.warn(`No translations found for ${language}`);
       return;
     }
 
-    // Update text elements with translation data
-    // Hero and navbar
-    document.getElementById("heroSubtitle").textContent = langData.heroSubtitle;
-    document.getElementById("languageDropdown").textContent =
-      langData.languageDropdown;
+    function updateText(id, text) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.textContent = text;
+      } else {
+        console.warn(`Missing element: #${id}`);
+      }
+    }
+
+    // Hero and Navbar
+    updateText("heroSubtitle", langData.heroSubtitle);
+    updateText("languageDropdown", langData.languageDropdown);
 
     // About Me
-    document.getElementById("aboutText").textContent = langData.aboutText;
-
-    document.getElementById("detail_item1").textContent =
-      langData.detail_item[0];
-    document.getElementById("detail_item2").textContent =
-      langData.detail_item[1];
+    updateText("aboutText", langData.aboutText);
+    if (langData.detail_item) {
+      updateText("detail_item1", langData.detail_item[0] || "");
+      updateText("detail_item2", langData.detail_item[1] || "");
+    }
 
     // Services
-    document.getElementById("servicesTitle").textContent =
-      langData.servicesTitle;
+    updateText("servicesTitle", langData.servicesTitle);
+    if (langData.services?.titles) {
+      updateText("service1", langData.services.titles[0] || "");
+      updateText("service2", langData.services.titles[1] || "");
+      updateText("service3", langData.services.titles[2] || "");
+    }
 
-    document.getElementById("service1").textContent = langData.services[0];
-    document.getElementById("service2").textContent = langData.services[1];
-    document.getElementById("service3").textContent = langData.services[2];
-
-    // -- Services description
-    document.getElementById("service1_description").textContent =
-      langData.services_description[0];
-    document.getElementById("service2_description").textContent =
-      langData.services_description[1];
+    if (langData.services?.descriptions) {
+      updateText(
+        "service1_description",
+        langData.services.descriptions[0] || ""
+      );
+      updateText(
+        "service2_description",
+        langData.services.descriptions[1] || ""
+      );
+      updateText(
+        "service3_description",
+        langData.services.descriptions[2] || ""
+      );
+    }
 
     // Experience
-    document.getElementById("experienceTitle").textContent =
-      langData.experienceTitle;
+    updateText("experienceTitle", langData.experienceTitle);
 
     // Projects
-    document.getElementById("projectsTitle").textContent =
-      langData.projectsTitle;
-
-    document.getElementById("project_title1").textContent =
-      langData.projects.titles[0];
+    updateText("projectsTitle", langData.projectsTitle);
+    if (langData.projects?.titles) {
+      updateText("project_title1", langData.projects.titles[0] || "");
+      updateText("project_title2", langData.projects.titles[1] || "");
+    }
 
     // Skills
-    document.getElementById("skillsTitle").textContent = langData.skillsTitle;
+    updateText("skillsTitle", langData.skillsTitle);
   }
 
-  // Set up event listeners on each language item in the dropdown
+  // Event Listeners for Language Dropdown
   languageItems.forEach((item) => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
       const selectedLanguage = item.getAttribute("data-lang");
+      if (!selectedLanguage) return;
 
-      // Update the dropdown toggle text to show the selected language
+      console.log("Language selected:", selectedLanguage); // Debugging
       languageDropdown.textContent = item.textContent;
-
-      // Update page content to the selected language
       updateContent(selectedLanguage);
     });
   });
 
-  // Set default language to English on load
+  // Ensure default language loads
   updateContent("en");
 });

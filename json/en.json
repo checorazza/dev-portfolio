@@ -4,20 +4,24 @@
   "aboutText": "placeholder",
   "detail_item": ["Argentina", "MS in Systems Engineering"],
   "servicesTitle": "Services",
-  "services": ["Data Cleaning", "placeholder", "placeholder"],
-  "services_description": [
-    "Preparing raw data for analysis by identifying and correcting errors, inconsistencies, and inaccuracies. Once this process is done, the data is accurate, complete, and reliable, ready for further analysis.",
+  "services": {
+    "titles": ["Data Cleaning", "Data Visualization", "Data Analysis"],
+    "descriptions": [
+      "Preparing raw data for analysis by identifying and correcting errors, inconsistencies, and inaccuracies. Once this process is done, the data is accurate, complete, and reliable, ready for further analysis.",
 
-    "Creation of clear and visual representations of your data. Through charts, graphs, and maps, I help you identify patterns, trends, and outliers, making complex data more accessible and actionable for your needs.",
+      "Creation of clear and visual representations of your data. Through charts, graphs, and maps, I help you identify patterns, trends, and outliers, making complex data more accessible and actionable for your needs.",
 
-    "placeholder"
-  ],
+      "placeholder"
+    ]
+  },
   "experienceTitle": "Experience",
-  "projectsTitle": "Projects",
-  "projects_description": ["placeholder", "placeholder", "placeholder"],
+  "experience": {
+    "titles": ["Experience 1", "Experience 2", "Experience 3"],
+    "descriptions": ["placeholder", "placeholder", "placeholder"]
+  },
   "projects": {
-    "titles": ["Project 1", "Project 2"],
-    "descriptions": ["placeholder", "placeholder"]
+    "titles": ["Project 1", "Project 2", "Project 3"],
+    "descriptions": ["placeholder", "placeholder", "placeholder"]
   },
   "skillsTitle": "Skills",
   "contactTitle": "Contact Me"
